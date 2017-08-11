@@ -1,0 +1,12 @@
+---
+logintype: 
+mail: 
+pass: 
+g_id: 
+info: ServerINFO
+runmessage: サーバを起動しました
+stopmessage: サーバを停止しました
+whitelist_onMessage: ホワイトリストを有効にしました。現在は権限者以外入室する事が出来ません
+whitelist_offMessage: ホワイトリストを無効にしました。一般の方も入室する事が可能です
+swich: false
+...

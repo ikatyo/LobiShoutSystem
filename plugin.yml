@@ -1,0 +1,11 @@
+name: LobiShoutSystem
+main: ikatyo\LobiShoutSystem\Main
+version: 3.5.0
+description: Lobiの指定グループに自動投稿します。
+api: 1.13.0
+load: POSTWORLD
+author: ikatyo
+commands: 
+ lobi:
+  description: Lobiにメッセージを投稿します。
+  usage: /lobi
