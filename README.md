@@ -83,3 +83,12 @@ https://github.com/NewDelion/LobiAPI-PHP
 このプラグインの改変はOKですが二次配布はお止め下さい。  
 不具合.意見・感想はTwitter@ikatyo0702までお願いします。  
 皆さんのご意見は出来るだけプラグインへ反映させて頂きます。  
+
+# サポート
+不具合報告はTwitterもしくはGitHubのIssuesへお願い致します。  
+その他配布先  
+https://pmmp.mcpe-jp.com/d/19-lobishoutsystem-lss-lobi  
+PocketMine Japan Community  
+  
+https://forum.pmjp.tk/d/6-lobishoutsystem-lss-lobi  
+PmJP Forum  
