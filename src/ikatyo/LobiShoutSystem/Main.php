@@ -81,6 +81,7 @@ class Main extends PluginBase implements Listener{
                 } else {
                     $this->getLogger()->info(TextFormat::RED . 'ログイン失敗');
                     $this->getLogger()->info(TextFormat::RED . 'Configを確認してください');
+                    $this->getServer()->getPluginManager()->disablePlugin($this);
                 }
                 //mailだった場合の処理はここまで
 
@@ -93,12 +94,14 @@ class Main extends PluginBase implements Listener{
                 } else {
                     $this->getLogger()->info(TextFormat::RED . 'ログイン失敗');
                     $this->getLogger()->info(TextFormat::RED . 'Configを確認してください');
+                    $this->getServer()->getPluginManager()->disablePlugin($this);
                 }
 
                 } else {
                 $this->getLogger()->info(TextFormat::RED . '入力形式が不正です');
                 $this->getLogger()->info(TextFormat::RED . 'メール認証の場合はmailと入力');
                 $this->getLogger()->info(TextFormat::RED . 'Twitter認証の場合はtwitterと入力');
+                $this->getServer()->getPluginManager()->disablePlugin($this);
             }
         }
     }
@@ -134,7 +137,7 @@ class Main extends PluginBase implements Listener{
     	}
 	}
 
-	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+	public function onCommand(CommandSender $sender, Command $command, string $label, array $args):bool{
 		switch(strtolower($command->getName())){
 			case "lobi":
 			if($sender->isOp()){
@@ -145,7 +148,7 @@ class Main extends PluginBase implements Listener{
                 $this->post($g_id, $message, $shout = $swich);
                 $sender->sendMessage("INFO:§aメッセージを投稿しました");
             }else{
-                    $sender->sendMessage("[Error]運営コマンドのため一般プレイヤーは利用できません。");
+                    $sender->sendMessage("§c[Error]運営コマンドのため一般プレイヤーは利用できません。");
             }
             break;
         }
