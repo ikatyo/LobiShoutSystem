@@ -81,9 +81,9 @@ whitelist_offMessage/whitelist off実行時に投稿されるメッセージを�
 尚LobiAPlは下記URLからダウンロードできます(GitHubにて公開されています。)  
 https://github.com/NewDelion/LobiAPI-PHP  
 このプラグインの改変はOKですが二次配布はお止め下さい。  
-不具合・意見はTwitter@ikatyo0702までお願いします。  
-尚、当プラグインを利用して生じた損害は作者及びLobiAPI作者は一切関与いたしません。  
-あくまで自己責任と言う形でご利用ください。
+不具合・意見はTwitter@ikatyo0702までお願いします。
+尚、当プラグインを利用して生じた損害は作者及びLobiAPI作者は一切関与いたしません。
+自己責任でご利用ください。
 
 # サポート
 不具合報告はTwitter(@ikatyo0702)もしくはGitHubのIssuesへお願い致します。  
