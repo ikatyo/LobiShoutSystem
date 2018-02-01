@@ -4,10 +4,11 @@ namespace ikatyo\LobiShoutSystem;
 use pocketmine\Player;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerRespawnEvent;
-use pocketmine\event\player\PlayerCommandPreProcessEvent;
+use pocketmine\event\player\PlayerCommandPreprocessEvent;
 use pocketmine\utils\TextFormat;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\event\server\ServerCommandEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use pocketmine\event\Listener;
@@ -137,6 +138,30 @@ class Main extends PluginBase implements Listener{
     	}
 	}
 
+    function whitelistConsole(ServerCommandEvent $wl){
+            if($wl->getCommand() == "whitelist on"){
+                $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+                $g_id = $config->get("g_id");
+                $swich = $config->get("swich");
+                $info = $config->get("info");
+                $whitelist_onMessage = $config->get("whitelist_onMessage");
+                $message = '['.$info.']'.$whitelist_onMessage."\n時刻:".date("H時i分s秒");
+
+                $this->post($g_id, $message, $shout = $swich);
+            }else{
+            if($wl->getCommand() == "whitelist off"){
+                $config = new Config($this->getDataFolder() . "/config.yml", Config::YAML);
+                $g_id = $config->get("g_id");
+                $swich = $config->get("swich");
+                $info = $config->get("info");
+                $whitelist_offMessage = $config->get("whitelist_offMessage");
+                $message = '['.$info.']'.$whitelist_offMessage."\n時刻:".date("H時i分s秒");
+                
+                $this->post($g_id, $message, $shout = $swich);
+            }
+        }
+    }
+
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args):bool{
 		switch(strtolower($command->getName())){
 			case "lobi":
@@ -152,6 +177,7 @@ class Main extends PluginBase implements Listener{
             }
             break;
         }
+        return true;
     }
 
 }
